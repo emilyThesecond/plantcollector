@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Soil List</h1>
+
+{% for soil in soil_list %}
+  <a href="{% url 'soils_detail' soil.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ soil.name }}</span>
+            <p>Color: {{ soil.brand }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
